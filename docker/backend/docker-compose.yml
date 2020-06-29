@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  pizza_backend:
+    image: pizza_backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /app/pizza:/app
+
+  pizza-frontend:
+    image: service-warehouse-frontend
+    build:
+      context: ../
+      dockerfile: frontend/Dockerfile
+    ports:
+      - 9280:80
+    links:
+      - pizza_backend
