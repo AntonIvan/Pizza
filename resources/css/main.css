@@ -1,0 +1,89 @@
+.name_pizza {
+    font-size: 30px;
+    display: block;
+}
+.top-picture {
+    height: 200px;
+    overflow: hidden;
+}
+.medium_block {
+    margin-top: 50px;
+}
+.price_pizza {
+    font-size: 25px;
+    display: block;
+}
+.price_pizza o {
+    font-size: 20px;
+}
+.buy_pizza {
+    background-color: #ee6d72;
+}
+.medium_block .col {
+    margin-bottom: 20px;
+}
+.medium_block .col .card {
+    padding: 15px;
+}
+.medium_block .col .responsive-img {
+    height: 200px;
+}
+.cart_block {
+    position: absolute;
+    width: 400px;
+    display: block;
+    background-color: white;
+    right: 15px;
+    top: 70px;
+    padding: 10px;
+    z-index: 1;
+    border-radius: 10px;
+}
+.cart_block::after {
+    display: block;
+    border: 10px solid transparent;
+    border-bottom: 10px solid white;
+    position: absolute;
+    content: '';
+    top: -20px;
+    right: 25px;
+}
+.cart_block_good {
+    color: black;
+}
+.cart_block_good > div , .cart_block_good_content > div {
+    display: inline-block;
+    height: 115px;
+    vertical-align: middle;
+}
+.cart_block_good_picture {
+    width: 110px;
+    line-height: 115px;
+}
+.cart_block_good_picture img {
+    vertical-align: middle;
+}
+.cart_block_good_content_left {
+    width: 200px;
+}
+.cart_block_good_content_right {
+    width: 63px;
+}
+.cart_block_good_content_left > div, .cart_block_good_content_right > div {
+    height: 50%;
+    width: 100%;
+    vertical-align: middle;
+}
+.cart_block_good_content_name {
+    font-size: 20px;
+}
+.cart_block_good_content_count {
+    line-height: initial;
+}
+.cart_block_good_content_count .material-icons, .cart_block_good_content_count div {
+    display: inline-block;
+    vertical-align: middle;
+}
+i.add_pizza:hover , i.remove_pizza:hover {
+    cursor: pointer;
+}

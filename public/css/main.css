@@ -1,0 +1,145 @@
+.name_pizza {
+    font-size: 30px;
+    display: block;
+}
+.top-picture {
+    height: 200px;
+    overflow: hidden;
+}
+.medium_block {
+    margin-top: 50px;
+}
+.price_pizza {
+    font-size: 25px;
+    display: block;
+}
+.price_pizza o {
+    font-size: 20px;
+}
+.buy_pizza {
+    background-color: #ee6d72;
+}
+.medium_block .col {
+    margin-bottom: 20px;
+}
+.medium_block .col .card {
+    padding: 15px;
+}
+.medium_block .col .responsive-img {
+    height: 200px;
+}
+.cart_block {
+    position: absolute;
+    width: 400px;
+    display: none;
+    background-color: white;
+    right: 15px;
+    top: 70px;
+    padding: 10px;
+    z-index: 1;
+    border-radius: 10px;
+}
+.cart_block::after {
+    display: block;
+    border: 10px solid transparent;
+    border-bottom: 10px solid white;
+    position: absolute;
+    content: '';
+    top: -20px;
+    right: 25px;
+}
+.cart_block .cart_block_good {
+    color: black;
+    padding-bottom: 10px;
+}
+.cart_block .cart_block_good::after, .history_block::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 80px;
+    height: 1px;
+    z-index: 123123123123;
+    background-color: black;
+    left: 50%;
+    margin-left: -45px;
+    margin-top: 5px;
+
+}
+.cart_block .cart_block_good > div , .cart_block_good_content > div {
+    display: inline-block;
+    height: 115px;
+    vertical-align: middle;
+}
+.cart_block_good_picture {
+    width: 110px;
+    line-height: 115px;
+}
+.cart_block_good_picture img {
+    vertical-align: middle;
+}
+.cart_block_good_content_left {
+    width: 200px;
+}
+.cart_block_good_content_right {
+    width: 63px;
+}
+.cart_block_good_content_left > div, .cart_block_good_content_right > div {
+    height: 50%;
+    width: 100%;
+    vertical-align: middle;
+}
+.cart_block_good_content_name {
+    font-size: 20px;
+}
+.cart_block_good_content_count {
+    line-height: initial;
+}
+.cart_block_good_content_count .material-icons {
+    cursor: pointer;
+}
+.cart_block_good_content_count .material-icons, .cart_block_good_content_count div {
+    display: inline-block;
+    vertical-align: middle;
+}
+.cart_block_good_content_price {
+    line-height: 27px;
+    font-size: 20px;
+}
+.add_pizza i:hover , .remove_pizza i:hover {
+    cursor: pointer;
+    -moz-user-select: none; -khtml-user-select: none; user-select: none;
+}
+.delete_pizza i:hover {
+    cursor: pointer;
+}
+.card .card-content {
+    height: 140px;
+}
+.name_user {
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+.fullcart_block_name_pizza {
+    font-size: 25px;
+}
+.fullcart_block > div {
+
+    height: 130px;
+    vertical-align: middle;
+}
+.fullcart_block .col .responsive-img {
+    height: 135px;
+}
+.fullcart_block .middle_block_fullcart > div, .fullcart_block .right_block_fullcart > div {
+    height: 50%;
+    line-height: normal;
+}
+.fullcart_block .middle_block_fullcart .material-icons {
+    display: inline-block;
+    vertical-align: middle;
+}
+.upperTitle {
+    font-size: 20px;
+}
+

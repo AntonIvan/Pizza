@@ -10,11 +10,13 @@ services:
       - /app/pizza:/app
 
   pizza-frontend:
-    image: service-warehouse-frontend
+    image: pizza-frontend
     build:
-      context: ../
-      dockerfile: frontend/Dockerfile
+      context: ../frontend/
+      dockerfile: Dockerfile
     ports:
-      - 9280:80
+      - 80:80
     links:
       - pizza_backend
+    volumes:
+      - /app/pizza:/app

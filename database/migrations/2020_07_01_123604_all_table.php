@@ -1,0 +1,61 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class AllTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('phone');
+            $table->string('password');
+            $table->string('cookie');
+        });
+
+        Schema::create('orders', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unique('id');
+            $table->unsignedInteger('link_id')->unsigned();
+            $table->foreign('link_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+            $table->unique('link_id');
+            $table->text('description');
+            $table->text('location');
+            $table->text('sum');
+            $table->text('currency');
+        });
+
+        Schema::create('goods', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unique('id');
+            $table->text('name');
+            $table->text('description');
+            $table->integer('price');
+            $table->integer('price_euro');
+            $table->text('images');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('orders');
+        Schema::drop('users');
+        Schema::drop('goods');
+    }
+}
