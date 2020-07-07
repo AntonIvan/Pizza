@@ -339,7 +339,7 @@ $(document).ready(function(){
                 if(data === "Success") {
                     $('#success').modal('open');
                     setTimeout(function() { $('#success').modal('close') }, 1500);
-
+                    location.replace('/');
                 }
             }
         });
