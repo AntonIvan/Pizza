@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"><head>
-        <link href="http://pizza.webtm.ru/materialize.css" rel="stylesheet">
-        <link href="http://pizza.webtm.ru/main.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="http://pizza.webtm.ru/materialize.js"></script>
-        <script src="http://pizza.webtm.ru/main.js"></script>
+        <script src="/js/materialize.js"></script>
+        <script src="/js/main.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>Pizza</title>
     </head>
