@@ -24,12 +24,7 @@ class AllTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->unique('id');
-            $table->unsignedInteger('link_id')->unsigned();
-            $table->foreign('link_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
-            $table->unique('link_id');
+            $table->bigInteger('link_id');
             $table->text('description');
             $table->text('location');
             $table->text('sum');
