@@ -19,7 +19,7 @@ class GoodsTable extends Seeder
             'description' => "Traditional Italian recipe with two types of cheese: grated mozzarella and classic cilegini; spicy pepperoni, mushrooms and a mix of seasonings",
             'price' => 6,
             'price_euro' => 5,
-            'images' => "/public/images/pizza.jpg",
+            'images' => "http://pizza.webtm.ru/pizza.jpg",
         ]);
 
         DB::table($table)->insert([
@@ -28,7 +28,7 @@ class GoodsTable extends Seeder
             'description' => "Perfect combination: tender chicken fillet with slices of blue cheese, parmegiano sauce, a mix of Italian cheeses and mozzarella cheese",
             'price' => 12,
             'price_euro' => 11,
-            'images' => "/public/images/pizza1.png",
+            'images' => "http://pizza.webtm.ru/pizza1.png",
         ]);
 
         DB::table($table)->insert([
@@ -37,7 +37,7 @@ class GoodsTable extends Seeder
             'description' => "Combination of cheeses: mozzarella, soft young cheese, a mixture of smoked Italian cheeses, cheese with blue mold, Reggianito, Cheddar with parmegiano and oregano sauce",
             'price' => 12,
             'price_euro' => 11,
-            'images' => "/public/images/pizza2.png",
+            'images' => "http://pizza.webtm.ru/pizza2.png",
         ]);
 
         DB::table($table)->insert([
@@ -46,7 +46,7 @@ class GoodsTable extends Seeder
             'description' => "Simple and delicious: with tomato sauce and mozzarella",
             'price' => 6,
             'price_euro' => 5,
-            'images' => "/public/images/pizza3.jpg",
+            'images' => "http://pizza.webtm.ru/pizza3.jpg",
         ]);
 
         DB::table($table)->insert([
@@ -55,7 +55,7 @@ class GoodsTable extends Seeder
             'description' => "Juicy chicken fillet and crispy bacon combined with signature tomato sauce, Mozzarella and onion",
             'price' => 12,
             'price_euro' => 10,
-            'images' => "/public/images/pizza4.jpg",
+            'images' => "http://pizza.webtm.ru/pizza4.jpg",
         ]);
 
         DB::table($table)->insert([
@@ -64,7 +64,7 @@ class GoodsTable extends Seeder
             'description' => "American classic with spicy pepperoni, Mozzarella and signature tomato sauce",
             'price' => 12,
             'price_euro' => 11,
-            'images' => "/public/images/pizza5.jpg",
+            'images' => "http://pizza.webtm.ru/pizza5.jpg",
         ]);
 
         DB::table($table)->insert([
@@ -73,7 +73,7 @@ class GoodsTable extends Seeder
             'description' => "Traditional pizza recipe with Mozzarella, juicy tomatoes, signature tomato sauce and oregano",
             'price' => 6,
             'price_euro' => 5,
-            'images' => "/public/images/pizza6.jpg",
+            'images' => "http://pizza.webtm.ru/pizza6.jpg",
         ]);
 
         DB::table($table)->insert([
@@ -82,7 +82,7 @@ class GoodsTable extends Seeder
             'description' => "Meaty pizza with spicy pepperoni, ham, crispy bacon, flavorful pork, beef, Mozzarella and signature tomato sauce",
             'price' => 9,
             'price_euro' => 8,
-            'images' => "/public/images/pizza7.jpg",
+            'images' => "http://pizza.webtm.ru/pizza7.jpg",
         ]);
 
         DB::table($table)->insert([
@@ -91,7 +91,7 @@ class GoodsTable extends Seeder
             'description' => "Spicy pizza with chicken fillet, tomato sauce, Mozzarella, mushrooms, onions, tomatoes, sweet green pepper and Jalapeno pepper",
             'price' => 12,
             'price_euro' => 11,
-            'images' => "/public/images/pizza8.jpg",
+            'images' => "http://pizza.webtm.ru/pizza8.jpg",
         ]);
 
         DB::table($table)->insert([
@@ -100,7 +100,7 @@ class GoodsTable extends Seeder
             'description' => "Super-rich pizza with Mozzarella, Parmesan, Fontina and a mix of smoked Italian cheeses, Thousand Islands sauce, beef, bacon, juicy tomatoes, pickles and onions",
             'price' => 14,
             'price_euro' => 13,
-            'images' => "/public/images/pizza9.jpg",
+            'images' => "http://pizza.webtm.ru/pizza9.jpg",
         ]);
 
         DB::table($table)->insert([
@@ -109,7 +109,7 @@ class GoodsTable extends Seeder
             'description' => "For seafood lovers: sea cocktail with Garlic ranch sauce, Mozzarella, sweet green and red peppers, onion, garlic and Italian herbs",
             'price' => 14,
             'price_euro' => 13,
-            'images' => "/public/images/pizza10.jpg",
+            'images' => "http://pizza.webtm.ru/pizza10.jpg",
         ]);
 
 
