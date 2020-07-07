@@ -52,7 +52,7 @@
     color: black;
     padding-bottom: 10px;
 }
-.cart_block .cart_block_good::after, .history_block::after {
+.cart_block .cart_block_good::after {
     display: block;
     position: absolute;
     content: '';

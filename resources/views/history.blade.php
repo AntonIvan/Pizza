@@ -44,10 +44,10 @@
 <div class="top-picture">
     <img class="responsive-img top_banner" src="http://pizza.webtm.ru/top.png">
 </div>
-<div class="container medium_block">
+<div class="container medium_block history_block">
     @if ($user)
         @foreach ($goods as $key => $good)
-            <div class="row history_block">
+            <div class="row">
                 <div class="col m4 s4 l4">
                     <p class="upperTitle">Number order {{$key+1}}</p>
                 </div>
