@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 class HandlerUsers
 {
     public function addNewUser($name, $pass, $phone) {
+        $phone = str_replace(["+","-","(",")"], "",$phone);
         if(User::where('phone', $phone)->first()) {
             return "This phone already exists";
         }
@@ -22,6 +23,7 @@ class HandlerUsers
     }
 
     public function loginUser($phone, $pass) {
+        $phone = str_replace(["+","-","(",")"], "",$phone);
         $user = User::where('phone', $phone)->first();
         if(is_null($user) || $user->password != $pass) {
             return "Error";

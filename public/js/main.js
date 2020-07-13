@@ -314,11 +314,8 @@ $(document).ready(function(){
         $('.block_delivery_price').css("display", "none");
     }
 
-    $('#order').click( function () {
+    $('#cart-one-step').click( function () {
         order = {};
-        order['name'] = $('#order_form #order_name').val();
-        order['phone'] = encodeURIComponent($('#order_form #order_phone').val());
-        order['address'] = $('#order_form #order_address').val();
         if($(".block_sum_price").is(':visible')) {
             order['sum'] = $('.all_price').text();
             order['currency'] = "dollar";
@@ -333,18 +330,55 @@ $(document).ready(function(){
         order['goods'] = goods;
         $.ajax({
             type: 'POST',
-            url: '/api/order',
+            url: '/api/fullcart',
             data: "order=" + JSON.stringify(order),
             success: function (data) {
-                if(data === "Success") {
-                    $('#success').modal('open');
-                    setTimeout(function() { $('#success').modal('close') }, 1500);
-                    location.replace('/');
-                }
+                    location.replace('/order');
             }
         });
     });
 
+    $('#order').click( function () {
+        order = {};
+        if($('#order_form #order_name').val().length == 0) {
+            $('#order_form #order_name').addClass('invalid');
+        } else if($('#order_form #order_phone').val().length == 0) {
+            $('#order_form #order_phone').addClass('invalid');
+        } else if($('#order_form #order_address').val().length == 0) {
+            $('#order_form #order_address').addClass('invalid');
+        } else {
+            order['name'] = $('#order_form #order_name').val();
+            order['phone'] = encodeURIComponent($('#order_form #order_phone').val());
+            order['address'] = $('#order_form #order_address').val();
+            order = Object.assign(order, JSON.parse($('#main').val()));
+            $.ajax({
+                type: 'POST',
+                url: '/api/order',
+                data: "order=" + JSON.stringify(order),
+                success: function (data) {
+                    $('#success').modal('open');
+                    setTimeout(function() { $('#success').modal('close') }, 1500);
+                    location.replace('/');
+                }
+            });
+        }
+    });
 
+    $('#history-btn').click( function () {
+        history = {};
+        if($('#phone_history').val().length == 0) {
+            $('#phone_history').addClass('invalid');
+        } else {
+            $.ajax({
+                type: 'POST',
+                url: '/api/phone',
+                data: "phone=" + $('#phone_history').val(),
+                success: function (data) {
+                    location.replace('/history');
+                }
+            });
+        }
+
+    });
 
 });

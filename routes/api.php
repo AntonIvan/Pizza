@@ -26,3 +26,5 @@ Route::post('/adduser', 'UsersController@addNewUser');
 Route::post('/login', 'UsersController@loginUser');
 Route::post('/currency', 'CurrencyController@change');
 Route::post('/order', 'OrderController@new');
+Route::post('/fullcart', 'OrderController@cart');
+Route::post('/phone', 'UsersController@phone');

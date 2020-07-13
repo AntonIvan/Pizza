@@ -24,8 +24,13 @@ class GoodsController extends Controller
         $user = resolve(HandlerUsers::class)->checkUser($request->cookie('login'));
         if($user) {
             return view('history', [
-                'goods' => json_decode(resolve(HandlerOrder::class)->returnOrder($user->id)),
+                'goods' => json_decode(resolve(HandlerOrder::class)->returnOrder($user->phone)),
                 'user' => $user
+            ]);
+        } elseif($request->cookie('phone')) {
+            return view('history', [
+                'goods' => json_decode(resolve(HandlerOrder::class)->returnOrder($request->cookie('phone'))),
+                'user' => ""
             ]);
         } else {
             return view('history', [
@@ -35,10 +40,17 @@ class GoodsController extends Controller
         }
     }
 
-    public function order(Request $request) {
+    public function cart(Request $request) {
         return view('cart', [
             'user' => resolve(HandlerUsers::class)->checkUser($request->cookie('login')),
             'cart' => json_decode(resolve(HandlerGoodsController::class)->returnGood($request)),
+        ]);
+    }
+
+    public function order(Request $request) {
+        return view('order', [
+            'user' => resolve(HandlerUsers::class)->checkUser($request->cookie('login')),
+            'goods' => json_decode($request->cookie('order')),
         ]);
     }
 }

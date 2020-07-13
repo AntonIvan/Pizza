@@ -15,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'GoodsController@all');
 Route::get('/history', 'GoodsController@userOrders');
-Route::get('/cart', 'GoodsController@order');
+Route::get('/cart', 'GoodsController@cart');
+Route::get('/order', 'GoodsController@order');
 

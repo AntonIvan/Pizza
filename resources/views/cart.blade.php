@@ -9,7 +9,7 @@
         <script src="/js/materialize.js"></script>
         <script src="/js/main.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <title>Pizza</title>
+        <title>Cart</title>
     </head>
 <body>
 <div class="navbar-fixed">
@@ -22,8 +22,9 @@
 
                     @if ($user)
                         <li><span class="name_user">Hello, {{$user->name}}</span></li>
-                        <li><a href="/history">History</a></li>
+
                     @else
+                        <li><a href="/history">History</a></li>
                         <li><a class="modal-trigger" href="#sign">Sign in</a></li>
                         <li><a class="modal-trigger" href="#reg">Registration</a></li>
                     @endif
@@ -45,11 +46,10 @@
     <img class="responsive-img top_banner" src="http://pizza.webtm.ru/top.png">
 </div>
 <div class="container medium_block">
-    @if ($user)
     @if (!$cart)
     <h3 class="flow-text">Sorry, you cart empty</h3>
     @else
-    <h3 class="flow-text">Our order</h3>
+    <h3 class="flow-text">One step</h3>
         <div class="row">
             <div class="col m12 l12 s12">
                     <label>
@@ -98,33 +98,9 @@
                 <o class="block_sum_price_euro"><o class="all_price_euro"></o>&euro;</o>
             </div>
         </div>
-
         <div class="row">
-            <form class="col s12" id="order_form">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="order_name" name="order_name" type="text" class="validate" value="{{$user->name ?? ''}}">
-                        <label for="order_name">Name</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="order_phone" name="order_phone" type="text" class="validate" value="{{$user->phone ?? ''}}">
-                        <label for="order_phone">Phone</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="order_address" name="order_address" type="text" class="validate">
-                        <label for="order_address">Address</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <a id="order" class="waves-effect waves-light btn">Buy</a>
-                </div>
-            </form>
+            <a id="cart-one-step" class="waves-effect waves-light btn">Next</a>
         </div>
-    @endif
-    @else
-        <h3 class="flow-text">Please register or authorize</h3>
     @endif
 </div>
 <div id="sign" class="modal">
@@ -184,11 +160,6 @@
     </div>
     <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-</div>
-<div id="congratulation" class="modal">
-    <div class="modal-content">
-        <h4>Сongratulation! New user added.</h4>
     </div>
 </div>
 <div id="success" class="modal">

@@ -24,7 +24,7 @@ class AllTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->unique('id');
-            $table->bigInteger('link_id');
+            $table->text('phone');
             $table->text('description');
             $table->text('location');
             $table->text('sum');

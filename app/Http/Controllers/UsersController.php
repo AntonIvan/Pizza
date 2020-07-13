@@ -22,4 +22,10 @@ class UsersController extends Controller
         return $response;
     }
 
+    public function phone(Request $request) {
+        $response = new Response();
+        $response->withCookie(cookie('phone', $request->phone,60, null, null, false, false));
+        return $response;
+    }
+
 }

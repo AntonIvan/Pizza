@@ -15,5 +15,7 @@ class EncryptCookies extends Middleware
         'login',
         'pizza',
         'currency',
+        'order',
+        'phone',
     ];
 }

@@ -22,8 +22,9 @@
 
                     @if ($user)
                         <li><span class="name_user">Hello, {{$user->name}}</span></li>
-                    <li><a href="/history">History</a></li>
+
                     @else
+                        <li><a href="/history">History</a></li>
                     <li><a class="modal-trigger" href="#sign">Sign in</a></li>
                     <li><a class="modal-trigger" href="#reg">Registration</a></li>
                     @endif

@@ -9,10 +9,11 @@ use App\User;
 
 class HandlerOrder
 {
+
     public function makeOrder($params) {
         $params = json_decode($params, true);
         $order = new Order();
-        $order->link_id = User::where('phone', $params['phone'])->value('id');
+        $order->phone = str_replace(["+","-","(",")"], "", $params['phone']);
         $order->description = json_encode($params['goods']);
         $order->location = $params['address'];
         $order->sum = $params['sum'];
@@ -22,7 +23,9 @@ class HandlerOrder
     }
 
     public function returnOrder($id) {
-        $orders = Order::where('link_id', $id)->get();
+        $obj = [];
+        $id = str_replace(["+","-","(",")"], "", $id);
+        $orders = Order::where('phone', $id)->get();
         foreach ($orders as $order) {
             $obj[] = [
                 "id" => $order->id,

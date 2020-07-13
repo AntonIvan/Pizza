@@ -9,9 +9,15 @@
         <script src="/js/materialize.js"></script>
         <script src="/js/main.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <title>Pizza</title>
+        <title>Cart</title>
     </head>
 <body>
+
+@if ($goods == "")
+    <script>
+        window.location.replace("/cart");
+    </script>
+@endif
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper">
@@ -22,7 +28,6 @@
 
                     @if ($user)
                         <li><span class="name_user">Hello, {{$user->name}}</span></li>
-
                     @else
                         <li><a href="/history">History</a></li>
                         <li><a class="modal-trigger" href="#sign">Sign in</a></li>
@@ -45,43 +50,48 @@
 <div class="top-picture">
     <img class="responsive-img top_banner" src="http://pizza.webtm.ru/top.png">
 </div>
-<div class="container medium_block history_block">
-    @if (!$user)
-        <h3 class="flow-text">Please enter your phone number</h3>
-        <div class="row">
-            <div class="input-field col s4">
-                <input id="phone_history" name="phone_history" type="text" class="validate">
-                <label for="phone_history">Phone</label>
-                <span class="helper-text" data-error="Empty" data-success="Right"></span>
-            </div>
-            <div class="col s8">
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <a id="history-btn" class="waves-effect waves-light btn">Search orders</a>
-                </div>
-            </div>
+
+<div class="container medium_block">
+    <h3 class="flow-text">Order registration</h3>
+    <div class="row">
+        <div class="col m4 s4 l4">
+            <p class="upperTitle">Order structure</p>
+            <input type="hidden" id="main" value="{{json_encode($goods)}}">
+           @foreach ($goods->goods as $name => $count)
+                <p>{{$name}} - {{$count}}</p>
+            @endforeach
         </div>
-    @endif
-    @if ($goods)
-        @foreach ($goods as $key => $good)
-            <div class="row">
-                <div class="col m4 s4 l4">
-                    <p class="upperTitle">Number order {{$key+1}}</p>
+        <div class="col m4 s4 l4">
+            <p class="upperTitle"><o>Sum</o> - {{$goods->sum}} @if ($goods->currency == "dollar") &#36; @else &euro; @endif</p>
+        </div>
+    </div>
+
+        <div class="row">
+            <form class="col s12" id="order_form">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="order_name" name="order_name" type="text" class="validate" value="{{$user->name ?? ''}}">
+                        <label for="order_name">Name</label>
+                        <span class="helper-text" data-error="Empty" data-success="Right"></span>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="order_phone" name="order_phone" type="text" class="validate" value="{{$user->phone ?? ''}}">
+                        <label for="order_phone">Phone</label>
+                        <span class="helper-text" data-error="Empty" data-success="Right"></span>
+                    </div>
                 </div>
-                <div class="col m4 s4 l4">
-                    <p class="upperTitle">Order structure</p>
-                    @foreach ($good->goods as $name => $count)
-                        <p>{{$name}} - {{$count}}</p>
-                    @endforeach
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="order_address" name="order_address" type="text" class="validate">
+                        <label for="order_address">Address</label>
+                        <span class="helper-text" data-error="Empty" data-success="Right"></span>
+                    </div>
                 </div>
-                <div class="col m4 s4 l4">
-                    <p><o class="upperTitle">Sum</o> - {{$good->sum}} @if ($good->currency == "dollar") &#36; @else &euro; @endif</p>
-                    <p><o class="upperTitle">Location</o> - {{$good->location}}</p>
+                <div class="row">
+                    <a id="order" class="waves-effect waves-light btn">Order</a>
                 </div>
-            </div>
-        @endforeach
-    @endif
+            </form>
+        </div>
 </div>
 <div id="sign" class="modal">
     <div class="modal-content">
@@ -145,6 +155,11 @@
 <div id="congratulation" class="modal">
     <div class="modal-content">
         <h4>Сongratulation! New user added.</h4>
+    </div>
+</div>
+<div id="success" class="modal">
+    <div class="modal-content">
+        <h4>Сongratulation! The order is accepted and will be ready soon.</h4>
     </div>
 </div>
 </body>
