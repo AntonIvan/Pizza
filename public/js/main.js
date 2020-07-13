@@ -245,7 +245,7 @@ $(document).ready(function(){
                     $('#phone_sign').addClass('invalid');
                     $('#pass').addClass('invalid');
                 } else {
-                    location.reload();
+                    location.replace('/');
                 }
             }
         });
