@@ -28,7 +28,6 @@
                     <li><a class="modal-trigger" href="#sign">Sign in</a></li>
                     <li><a class="modal-trigger" href="#reg">Registration</a></li>
                     @endif
-                        <li><a href="/">Menu</a></li>
                     <li style="position: relative;"><a class="waves-effect waves-light btn" id="button_cart">Cart <span id="all_object_in_cart">{{ $cart ?? ''}}</span></a>
                         <div class="cart_block z-depth-2">
 
