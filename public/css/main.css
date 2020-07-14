@@ -105,6 +105,9 @@
     line-height: 27px;
     font-size: 20px;
 }
+#buy_cart {
+    margin-top: 20px;
+}
 .add_pizza i:hover , .remove_pizza i:hover {
     cursor: pointer;
     -moz-user-select: none; -khtml-user-select: none; user-select: none;
